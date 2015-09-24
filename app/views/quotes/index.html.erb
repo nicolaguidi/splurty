@@ -1,10 +1,13 @@
 <h2>
   <span>SPLURTY / No. <%= @quote.id %></span>
-  Here's the <u>best unsolicited startup advice</u> you can get!
+  Here's the <u>best movie quote</u> you can get!
 </h2>
+<br />
 
-<h1><%= @quote.saying %></h1>
-<h2><%= @quote.author %></h2>
+<div class="col-xs-8 col-xs-offset-2">
+  <h1 class="saying"><%= @quote.saying %></h1>
+  <h2 class="author pull-right">— <%= @quote.author %></h2>
+</div>
 
 <br class="clear" />
 <br />
