@@ -11,6 +11,14 @@ class QuotesController < ApplicationController
     redirect_to root_path
   end
 
+  def show
+    # If we use Quote.find Rails will raise an error!
+    @quote = Quote.where(:id => params[:id]).first
+    if @quote.blank?
+      render :text => "Not Found", :status => :not_found
+    end
+  end
+
   def about
   end
 
