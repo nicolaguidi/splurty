@@ -5,7 +5,7 @@ class QuoteTest < ActiveSupport::TestCase
   #   assert true
   # end
   test "unique_tag" do
-    quote = Quote.create(:author => 'John McClane', :saying => 'Yippee-ki-yay, motherfucker.')
+    quote = FactoryGirl.create(:quote, :author => 'John McClane')
     expected = 'JM#' + quote.id.to_s
     actual = quote.unique_tag
     assert_equal expected, actual

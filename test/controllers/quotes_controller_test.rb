@@ -5,7 +5,7 @@ class QuotesControllerTest < ActionController::TestCase
   #   assert true
   # end
   test "quote show page" do
-    quote = Quote.create(:author => 'John McClane', :saying => 'Yippee-ki-yay, motherfucker.')
+    quote = FactoryGirl.create(:quote)
     get :show, :id => quote.id
     assert_response :success
   end
